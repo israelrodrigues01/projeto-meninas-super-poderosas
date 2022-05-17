@@ -1,0 +1,32 @@
+:root
+{
+	--playerone: #f66;
+	--playertwo: #fa8;
+	--playname: #fff;
+	--playeroneselect: #1c0;
+	--playertwoselect: #f44;
+	--padding: 0 50px;
+}
+
+@keyframes sombraOne
+{
+	0%,50%
+	{
+		box-shadow: 0 0 20px var(--playeroneselect);		
+	}
+	100%
+	{
+		box-shadow: 0 0 0px var(--playeroneselect);		
+	}
+}
+@keyframes sombraTwo
+{
+	0%,50%
+	{
+		box-shadow: 0 0 20px var(--playertwoselect);		
+	}
+	100%
+	{
+		box-shadow: 0 0 0px var(--playertwoselect);		
+	}
+}

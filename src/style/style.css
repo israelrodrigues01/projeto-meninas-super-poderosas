@@ -1,0 +1,144 @@
+*
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: sans-serif, arial;
+	list-style: none;
+}
+
+main
+{
+	min-height: 100vh;
+	width: 100%;
+	background: #777 url(../fundo.gif) no-repeat center;
+	background-size: cover;
+	background-blend-mode: multiply;
+}
+
+section
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+
+.personagens
+{
+	position: absolute;
+	top: 0; left: 0;
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: var(--padding);
+	pointer-events: none;
+}
+.personagens .personagem
+{
+	width: 25%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	font-style: italic;
+}
+.personagens .personagem img
+{
+	width: 100%;
+}
+.personagens .nome-personagem
+{
+	position: absolute;
+	bottom: 70px;
+	text-align: center;
+	width: 300px;
+	color: var(--playname);
+	font-size: 2rem;
+	text-transform: uppercase;
+	z-index: 1;
+}
+.nome-um
+{
+	left: 0;
+}
+.nome-dois
+{
+	right: 0;
+}
+.personagens .nome-um:before
+{
+	content: '';
+	width: 100%;
+	height: 20px;
+	left: 0;
+	top: 25px;
+	position: absolute;
+	background: var(--playerone);
+	border-radius: 3px;
+	z-index: -1;
+}
+.personagens .nome-dois:before
+{
+	content: '';
+	width: 100%;
+	height: 20px;
+	left: 0;
+	top: 25px;
+	position: absolute;
+	background: var(--playertwo);
+	border-radius: 3px;
+	z-index: -1;
+}
+
+.select-player
+{
+	display: grid;
+	grid-template-columns: repeat(3, 10vw);
+	gap: 10px;
+	align-content: center;
+	height: 100vh;
+}
+.select-player .selecione-personagem
+{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	border-radius: 10px;
+	overflow: hidden;
+	cursor: pointer;
+}
+.select-player .selecione-personagem img
+{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.select-player .selecione-personagem span
+{
+	position: absolute;
+	opacity: 0;
+	text-shadow: 0 0 5px #000;
+	top: 5px; left: 5px;
+}
+.select-player .selecione-personagem.selecionado,
+.select-player .selecione-personagem:hover
+{
+	animation: sombraOne 1s ease infinite;
+}
+.select-player .selecione-personagem.selecionado span
+{
+	color: var(--playeroneselect);
+	opacity: 1;
+}
+.select-player .selecione-personagem.selecionado-player-two
+{
+	animation: sombraTwo 1s ease infinite;
+}
+.select-player .selecione-personagem.selecionado-player-two span
+{
+	color: var(--playertwoselect);
+	opacity: 1;
+}
+
